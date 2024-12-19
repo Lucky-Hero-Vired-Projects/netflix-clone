@@ -67,7 +67,7 @@ pipeline {
         }
         stage('Checkout from Git') {
             steps {
-                git branch: 'main', url: 'https://github.com/gauri17-pro/nextflix.git'
+                git branch: 'devops', url: 'https://github.com/Lucky-Hero-Vired-Projects/netflix-clone.git'
             }
         }
         stage("Sonarqube Analysis") {
@@ -113,8 +113,8 @@ pipeline {
             steps{
                 script {
                     withDockerRegistry(credentialsId: 'docker-cred', toolName: 'docker'){   
-                    sh "docker tag netflix gauris17/netflix:latest "
-                    sh "docker push gauris17/netflix:latest"
+                    sh "docker tag netflix lucky1225/netflix:latest "
+                    sh "docker push lucky1225/netflix:latest"
                     }
                 }
             }
